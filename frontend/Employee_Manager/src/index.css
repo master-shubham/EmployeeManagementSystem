@@ -1,0 +1,69 @@
+.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.sidebar {
+  height: 100vh;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar-open {
+  width: 250px;
+}
+
+.sidebar-closed {
+  width: 0;
+}
+
+.active-link {
+  background-color: #0d6efd;
+  color: white !important;
+  border-radius: 5px;
+}
+
+/* Blur background when modal opens */
+.modal-backdrop.show {
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Glass effect modal */
+.custom-modal {
+  border-radius: 15px;
+  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+
+.modern-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.table-row-hover:hover {
+  background-color: #f8f9fa;
+  transform: scale(1.002);
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #4e73df, #224abe);
+  color: white;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.action-btn {
+  transition: all 0.2s ease;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
