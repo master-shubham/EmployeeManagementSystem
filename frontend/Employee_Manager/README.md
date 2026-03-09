@@ -46,7 +46,7 @@ The system supports full CRUD functionality:
 * React.js
 * Vite
 * React Router
-* CSS / Bootstrap (optional)
+* CSS / Tailwind Css
 
 ### Backend
 
@@ -73,6 +73,7 @@ Employee-Management-System
 │
 ├── frontend
 │   ├── components
+│   ├── Layout
 │   ├── pages
 │   ├── context
 │   └── App.jsx
