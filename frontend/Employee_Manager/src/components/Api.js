@@ -85,23 +85,44 @@ export const GetEmployeeById = async(id) => {
     }
 }
 
-export const GetEmployeeByEmail = async(email) => {
-    const url = `${BASE_URL}/api/employees/email/${email}`;
+// export const GetEmployeeByEmail = async(email) => {
+//     const url = `${BASE_URL}/api/employees/email/${email}`;
 
-    try {
-        const options = {
-          method: "GET",
-          "Content-Type": "application/json",
+//     try {
+//         const options = {
+//           method: "GET",
+//           "Content-Type": "application/json",
 
-        };
-        const result = await fetch(url,options)
-        const data= await result.json()
-        return data
-    } catch (error) {
-        console.log("Error(fetch):",error);
-        return error
-    }
-}
+//         };
+//         const result = await fetch(url,options)
+//         const data= await result.json()
+//         return data
+//     } catch (error) {
+//         console.log("Error(fetch):",error);
+//         return error
+//     }
+// }
+
+export const GetEmployeeByEmailPassword = async (email) => {
+  const url = `${BASE_URL}/api/employees/email/${email}`;
+
+  try {
+    const options = {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const result = await fetch(url, options);
+    const response = await result.json();
+
+    return response.data; // return employee object
+  } catch (error) {
+    console.log("Error(fetch):", error);
+    return null;
+  }
+};
 
 export const DeleteEmployeeById = async(id) => {
     const url = `${BASE_URL}/api/employees/${id}`;

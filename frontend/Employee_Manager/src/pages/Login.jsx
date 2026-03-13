@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { GetEmployeeByEmail } from "../components/Api";
+import { GetEmployeeByEmailPassword } from "../components/Api";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -13,7 +13,10 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!email) return;
+    if (!email || !password) {
+      alert("Please enter email and password");
+      return;
+    }
 
     try {
       // Admin login
@@ -28,15 +31,22 @@ const Login = () => {
         login(adminUser);
         navigate("/employee");
       } else {
-        // Fetch employee data from API
-        const { data } = await GetEmployeeByEmail(email);
-        console.log(data)
-        if (!data) {
+        // Fetch employee
+        const emp = await GetEmployeeByEmailPassword(email);
+
+        console.log("Employee:", emp);
+        console.log("Entered password:", password);
+        console.log("DB password:", emp?.password);
+
+        if (!emp) {
           alert("Employee not found");
           return;
         }
 
-        const emp = data;
+        if (emp.password !== password) {
+          alert("Incorrect password");
+          return;
+        }
 
         const employeeUser = {
           id: emp._id,

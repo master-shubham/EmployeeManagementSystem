@@ -10,6 +10,10 @@ const EmployeeSchema = new Schema({
         require:true,
         unique:true
     },
+    password:{
+        type:String,
+        require:true,
+    },
     phone:{
         type:String,
         require:true

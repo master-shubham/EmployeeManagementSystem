@@ -4,7 +4,8 @@ const {
   getEmployeeById,
   deleteEmployeeById,
   updateEmployeeById,
-  getEmployeeByEmail
+  getEmployeeByEmail,
+  // getEmployeeByEmailPassword
 } = require("../Controllers/EmployeeController");
 const { cloudinaryFileUploader } = require('../Middlewares/FileUploader');
 
@@ -21,6 +22,7 @@ routes.put(
 routes.get('/:id',getEmployeeById)
 routes.delete('/:id',deleteEmployeeById)
 routes.get('/email/:email', getEmployeeByEmail);
+//routes.get('/password/:password', getEmployeeByEmailPassword);
 
 
 module.exports = routes

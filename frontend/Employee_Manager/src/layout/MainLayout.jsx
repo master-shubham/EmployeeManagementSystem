@@ -83,7 +83,7 @@ const MainLayout = () => {
               {darkMode ? (
                 <i className="bi bi-toggle-on"></i>
               ) : (
-                <i class="bi bi-toggle-off"></i>
+                <i className="bi bi-toggle-off"></i>
               )}
             </button>
             <button

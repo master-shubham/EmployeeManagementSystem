@@ -111,6 +111,26 @@ const getEmployeeByEmail = async (req, res) => {
   }
 };
 
+// const getEmployeeByEmailPassword = async (req, res) => {
+//   try {
+//     const { email, password } = req.params;
+
+//     const emp = await EmployeeModel.findOne({ email:email,password:password });
+
+//     res.status(200).json({
+//       message: "Get Employee Detail",
+//       success: true,
+//       data: emp,
+//     });
+//   } catch (error) {
+//     res.status(500).json({
+//       message: "Internal server error",
+//       success: false,
+//       error: error,
+//     });
+//   }
+// };
+
     const updateEmployeeById = async (req, res) => {
       try {
         const {name,phone,email,salary,department}=req.body;
@@ -174,5 +194,5 @@ const getEmployeeByEmail = async (req, res) => {
       getEmployeeById,
       updateEmployeeById,
       deleteEmployeeById,
-      getEmployeeByEmail,
+      getEmployeeByEmail
     };

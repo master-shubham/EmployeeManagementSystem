@@ -15,6 +15,7 @@ const AddEmployee = ({
   const [employeeFormData, setEmployeeFormData] = useState({
     name: "",
     email: "",
+    password:"",
     phone: "",
     department: "",
     salary: "",
@@ -33,6 +34,7 @@ const AddEmployee = ({
     setEmployeeFormData({
       name: "",
       email: "",
+      password:"",
       phone: "",
       department: "",
       salary: "",
@@ -104,6 +106,16 @@ const AddEmployee = ({
                 type="email"
                 name="email"
                 value={employeeFormData.email}
+                onChange={handleFormData}
+              />
+            </Form.Group>
+
+            <Form.Group className="mb-3">
+              <Form.Label>Password</Form.Label>
+              <Form.Control
+                type="password"
+                name="password"
+                value={employeeFormData.password}
                 onChange={handleFormData}
               />
             </Form.Group>
