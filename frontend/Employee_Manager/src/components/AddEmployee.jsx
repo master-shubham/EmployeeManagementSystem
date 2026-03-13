@@ -23,12 +23,15 @@ const AddEmployee = ({
   });
 
   const [updateMode,setUpdateMode]= useState(false)
-  useEffect(()=>{
-    if (updateEmpObj) {
-      setUpdateMode(true)
-      setEmployeeFormData(updateEmpObj)
-    }
-  },[updateEmpObj])
+useEffect(() => {
+  if (updateEmpObj) {
+    setUpdateMode(true);
+    setEmployeeFormData(updateEmpObj);
+  } else {
+    setUpdateMode(false);
+    resetEmployeeState();
+  }
+}, [updateEmpObj]);
 
   const resetEmployeeState = () => {
     setEmployeeFormData({
@@ -53,6 +56,7 @@ const AddEmployee = ({
     });
   };
 
+  console.log(updateMode)
   // Add employee
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -61,7 +65,7 @@ const AddEmployee = ({
       const { success, message } = updateMode
         ? await UpdateEmployeeById(employeeFormData, employeeFormData._id)
         : await CreateEmployee(employeeFormData);
-
+      
       if (success) {
         notify(message, "success");
       } else {
@@ -115,6 +119,7 @@ const AddEmployee = ({
               <Form.Control
                 type="password"
                 name="password"
+                autoComplete="new-password"
                 value={employeeFormData.password}
                 onChange={handleFormData}
               />
@@ -165,7 +170,7 @@ const AddEmployee = ({
               Cancel
             </Button>
 
-            <Button variant="primary" type="submit">
+            <Button variant="primary" type="submit" onClick={handleModelClose}>
               {updateMode ? "Update" : "Save"}
             </Button>
           </Modal.Footer>

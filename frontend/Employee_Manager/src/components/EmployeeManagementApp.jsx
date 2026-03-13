@@ -20,13 +20,16 @@ const EmployeeManagementApp = () => {
     },
   });
 
-  const handleModelShow = () => setShowModel(true);
+const handleModelShow = () => {
+  setUpdateEmpObj(null); // reset update object
+  setShowModel(true);
+};
 
   const handleModelClose = () => setShowModel(false);
 
   const handleUpadateEmployee = (empObj) => {
     setUpdateEmpObj(empObj);
-    handleModelShow(true);
+    setShowModel(true)
   };
 
   const handleDeleteEmployee = async (emp) => {

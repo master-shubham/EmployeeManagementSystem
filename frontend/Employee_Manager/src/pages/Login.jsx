@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { GetEmployeeByEmailPassword } from "../components/Api";
+import { notify } from "../../utils";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -14,7 +15,7 @@ const Login = () => {
     e.preventDefault();
 
     if (!email || !password) {
-      alert("Please enter email and password");
+      notify("Please enter email and password","error");
       return;
     }
 
@@ -34,17 +35,13 @@ const Login = () => {
         // Fetch employee
         const emp = await GetEmployeeByEmailPassword(email);
 
-        console.log("Employee:", emp);
-        console.log("Entered password:", password);
-        console.log("DB password:", emp?.password);
-
         if (!emp) {
-          alert("Employee not found");
+          notify("Employee not found", "error");
           return;
         }
 
         if (emp.password !== password) {
-          alert("Incorrect password");
+          notify("Incorrect password", "error");
           return;
         }
 
@@ -61,6 +58,7 @@ const Login = () => {
     } catch (error) {
       console.error(error);
       alert("Login failed");
+      notify("Login failed", "error");
     }
   };
 
@@ -74,6 +72,7 @@ const Login = () => {
             type="email"
             className="form-control mb-3"
             placeholder="Email"
+            autoComplete="email"
             onChange={(e) => setEmail(e.target.value)}
           />
 
@@ -82,6 +81,7 @@ const Login = () => {
             className="form-control mb-3"
             placeholder="Password"
             onChange={(e) => setPassword(e.target.value)}
+            autoComplete="current-password"
           />
 
           <button className="btn btn-primary w-100">Login</button>

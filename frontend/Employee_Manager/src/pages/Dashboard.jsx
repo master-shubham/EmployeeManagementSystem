@@ -24,7 +24,7 @@ const Dashboard = () => {
  useEffect(() => {
     fetchEmployee("")
   }, []);
-  console.log(employeeData)
+  
   return (
     <div>
       <h3 className="mb-4">Dashboard</h3>
