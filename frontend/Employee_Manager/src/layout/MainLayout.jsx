@@ -81,9 +81,9 @@ const MainLayout = () => {
               onClick={() => setDarkMode(!darkMode)}
             >
               {darkMode ? (
-                <i className="bi bi-toggle-on"></i>
+                <i className="bi bi-toggle-on p-2"></i>
               ) : (
-                <i className="bi bi-toggle-off"></i>
+                <i className="bi bi-toggle-off p-2"></i>
               )}
             </button>
             <button

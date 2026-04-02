@@ -33,9 +33,8 @@ const Profile = () => {
       <div className="card shadow-lg border-0 rounded-4">
         <div className="card-header d-flex justify-content-between align-items-center">
           <h4 className="mb-0">My Profile</h4>
-
           <button
-            className="btn btn-danger btn-sm"
+            className="btn btn-outline-danger btn-sm"
             onClick={() => {
               logout();
               navigate("/login");
