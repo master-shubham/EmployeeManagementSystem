@@ -39,6 +39,20 @@ The system supports full CRUD functionality:
 * **Update** – Edit employee information
 * **Delete** – Remove employee records
 
+## 📷 Screenshot 
+
+**Dashboard**
+![Dashboard](frontend/Employee_Manager/public/images/Dashboard.png)
+
+**Home**
+![Home](frontend/Employee_Manager/public/images/Home.png)
+
+**ProfileDetail**
+![ProfileDetail](frontend/Employee_Manager/public/images/ProfileDetail.png)
+
+**Login**
+![login](frontend/Employee_Manager/public/images/Login.png)
+
 ## 🧰 Technologies Used
 
 ### Frontend
@@ -106,7 +120,7 @@ npm install
 Backend:
 
 ```
-npm run server
+npm run index.js
 ```
 
 Frontend:
@@ -132,8 +146,7 @@ npm run dev
 
 ## 👨‍💻 Author
 
-Developed by **Shubham**
-Diploma Computer Engineering Student
+Developed by **Shubham❤️**
 
 ---
 
