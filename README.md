@@ -60,7 +60,7 @@ The system supports full CRUD functionality:
 * React.js
 * Vite
 * React Router
-* CSS / Tailwind Css
+* CSS / Boostrap
 
 ### Backend
 
